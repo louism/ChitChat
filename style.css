@@ -11,7 +11,37 @@ body {
     background: #dad1f9;  
 }
 
+.modal-form{
+	left: 0%;
+	height:100vh;
+	background-color: #000000;
+	text-align: center;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 200%;
+}
+
+.modal-form .modal-input{
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 2px solid white;
+	text-align: center;
+	padding-top: 60px;
+}
+
+.modal-form .modal-button{
+	padding-bottom: 100px;
+	background: none;
+	border: none;
+	margin: none;
+	padding: 0px;
+	font-family: 'Helvetica';
+	font-size: 300%;
+}
+
 .footer{
+	visibility: hidden;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
