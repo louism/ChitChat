@@ -1,5 +1,6 @@
 // Globals
 var name = "";
+var submitted = false;
 var nodes = document.getElementsByClassName("chatSubmit");
 var button = nodes[0];
 var audio = new Audio('./ding.mp3');
@@ -12,6 +13,9 @@ var socket = new WebSocket('ws://localhost:8001');
 socket.onmessage = function(evt){
 	audio.play();
 	$('<div class="yourSpace"><li class="foreign">' + evt.data.substring(1,evt.data.length-1) + '</li></div>').hide().appendTo('.messages').fadeIn(600);
+	if(submitted == true){
+		updateScroll();
+	}
 }
 
 button.onclick = function(){
@@ -25,7 +29,6 @@ button.onclick = function(){
 
 
 //JQuery Effects
-
 $(document).keypress(function(e){
 	if(e.keyCode ==  13){
 		var message = document.getElementById('chatSet').value;
@@ -51,6 +54,7 @@ $('.modal-button').click(function(){
 		name = modal;
 		$('.modal-form').remove();
 		socket.send(name + ' has joined the room');
+		submitted = true;
 		$('.footer').css("visibility", "visible");
 	}
 });
