@@ -47,7 +47,7 @@ body {
 	width: 100%;
 	height: 60px;
 	left: 0%;
-	background-color: #4f33b5;
+	background-color: SeaGreen;
 	padding-top: 15px;
 	padding-left: 8px;
 }
@@ -61,23 +61,23 @@ body {
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
 	text-indent: 10px;
-	background-color: #7a62d3;
+	background-color: MediumSeaGreen;
 	box-shadow: none;
 	outline: none;
 	border:0px;
-	color: #dad1f9;
+	color: white;
 	font-family: 'Helvetica';
 	font-weight: bold;
 	font-size: 100%
 }
 
 .footer input::-webkit-input-placeholder{
-	color: #dad1f9;
+	color: white;
 }
 
 .footer .chatSubmit {
-	background-color: #7a62d3;
-	color: #dad1f9;
+	background-color: #39ac6b;
+	color: white;
 	width: 10%;
 	height: 70%;
 	margin-left: 0.3%;
@@ -110,7 +110,7 @@ body {
 }
 
 .messages .yourSpace{
-	background-color: #7a62d3;
+	background-color: #2d8653;
 	margin-bottom: 10px;
 	border-radius: 5px;
 }
@@ -123,10 +123,10 @@ body {
 	white-space:pre-wrap;
 	word-wrap: break-word;
 	position: relative;
-	background-color: #7a62d3;
+	background-color: #2d8653;
 	font-family: 'Helvetica';
 	font-weight: bold;
-	color: #dad1f9;
+	color: white;
 }
 
 .messages .local{

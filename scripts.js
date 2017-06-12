@@ -3,6 +3,7 @@ var name = "";
 var submitted = false;
 var nodes = document.getElementsByClassName("chatSubmit");
 var button = nodes[0];
+var users = [];
 var audio = new Audio('./ding.mp3');
 
 
@@ -33,8 +34,8 @@ $(document).keypress(function(e){
 	if(e.keyCode ==  13){
 		var message = document.getElementById('chatSet').value;
 		if(message != ''){
-			$('<div class="mySpace"><li class="local">' + message + '</li></div>').hide().appendTo('.messages').fadeIn(600);
-			socket.send(name + " said: " + message);
+			$('<div class="mySpace"><li class="local">' + name + ": " + message + '</li></div>').hide().appendTo('.messages').fadeIn(600);
+			socket.send(name + ": " + message);
 			document.getElementById('chatSet').value = '';
 			updateScroll();
 		}
@@ -54,6 +55,8 @@ $('.modal-button').click(function(){
 		name = modal;
 		$('.modal-form').remove();
 		socket.send(name + ' has joined the room');
+		users.push(name);
+		$('<div class="mySpace"><li class="local">' + name +'</li></div>').hide().appendTo('.online').fadeIn(600);
 		submitted = true;
 		$('.footer').css("visibility", "visible");
 	}
